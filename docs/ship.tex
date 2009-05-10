@@ -23,10 +23,38 @@ place, however, the controls are grossly simplified and should be fairly
 easy to figure out.
 
 \subsubsection{Comm}
-The Comm system is used for ship-to-ship communications.  
+The Comm system is used for ship-to-ship communications, and possibly, to play music on "radio stations" broadcast from planets that are within range of the Sundog.  
 
-In an emergency, the distress call button can be used by clicking on the
-distress button, which will then illuminate the button and call for help.
+The comm control panel has five channels, one per button. The buttons are located in the indented strip at the top of the panel.
+
+The comm is inactive until it receives a signal. The user can hit any of the five buttons at any time, depressing the button as is shown in comm screen #1 (far left) but nothing will show on the screen if there is no signal. (alternatively, we can have a short message like "Channel 1 - No uplink" display on the comm screen if the player pushes buttons without a signal.)
+
+When a signal is received, it is funneled into the first unused channel - in the storyboard's case, it is the first button. When the signal comes, it lights up the button with a blue line, to show this is an active channel. An alert sound should accompany the initiation of the signal. The blue bar on the button will light up regardless of whether the channel button is currently depressed or not. (see screen #2 in the storyboard).
+
+The message displays in the screen, with the source at the top, followed by the source's message, then by the options (like hyperlinks) for the user to select. The NPC ship replies or updates the information due to the player's non-response, and the player is given new options to respond with. Such time-out for non-response should be 30 seconds. If the player does not click one of the options within 30 seconds (regardless of whether the channel screen is visible or not) the NPC will send another message or terminate the conversation and begin shooting. (re: original game)
+
+If during the course of the first radio conversation a second one is initiated or received, the next available comm channel button will light up blue. Moreover, it will also have a blinking yellow light, that will blink twice a second.  (See screen #3 in the storyboard). The yellow light indicates that there is an unread message on that screen.
+
+Pushing the second channel button will switch the screen to that conversation. (See screen #4). The blinking yellow light turns out, as you now have displayed the new message. Note both channels, including the first, are lit blue, as they both have active conversations.
+
+If during the course of the second conversation a message is received in the first conversation, the yellow light will begin to blink, indicating the new message. (see screen #5). It will continue to blink until the player switches back to that conversation.
+
+Once a conversation is concluded, a text message should indicate this (i.e. "Uplink terminated") at the bottom of the screen under the text of the last message, and the blue light will turn off. When the user leaves the screen for another, the text (containing the NPC's last message) on the screen will be lost, and a blank screen will result if the player returns to that screen.
+
+If a conversation terminates while the player is viewing another screen, the yellow light will blink (just as if it received a new message) and when the player changes to that channel they will see the last message and the text alert indicating the conversation is over.
+
+The DISTRESS bar will activate if the player clicks it, and it will open a conversation with traffic control. Once clicked, the bar should remain down and lit up. After traffic control answers and then concludes the conversation (either with the player requesting help or a time-out where the player never requests anything), the distress bar should automatically spring back into place. The timeout should be 30 seconds, where if the TC answers and the player doesn't choose an option in 30 seconds, the TC will terminate the conversation.
+
+Color scheme for text:
+Red = source name and system alerts (i.e. "lost uplink", "message terminated", etc)
+Green = NPC message
+Yellow = Player Prompt
+Blue = Player's response
+
+
+MUSIC: 
+For the music radio broadcast, it will work just like an incoming conversation described above, with the exception that the yellow light will never flash as it is assumed the radio broadcast is constant, regardless of a song change, etc. When the player nears a planet and is within radio range, they a channel button will light up. The comm screen will then act as a browser that will let the player switch tunes, review information, etc. This spec will be drawn up later on  (I don't expect us to worry about radio stations for a while - we have bigger fish to fry first). When the player leaves the range of the station, it will terminate and the screen will go blank.
+
 
 \begin{tabular}{ | l | l | l | }
 \hline
@@ -38,8 +66,6 @@ Distress & \includegraphics[scale=0.5]{images/distress_on.png} & \includegraphic
 
 Open Items:
 \begin{itemize}
-\item How does the Comm work?  Do we want to do something similar to the
-original SDFL?  Do we want to use buttons?
 \item What's the response time for distress calls?  Is it different
 depending on what system the ship is in (presumably some random value
 which interacts with the lawlessness value)?
@@ -47,8 +73,6 @@ which interacts with the lawlessness value)?
 the police just call and have a conversation?  Can we show multiple
 conversations on the Comm display?
 the cursor up similar to the sliders?
-\item Do we want the ship's radio to be controller through here or some
-other way (key combinations?)
 \end{itemize}
 
 \subsubsection{Tactical}
