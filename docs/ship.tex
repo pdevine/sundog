@@ -27,6 +27,8 @@ The Comm system is used for ship-to-ship communications, and possibly, to play m
 
 The comm control panel has five channels, one per button. The buttons are located in the indented strip at the top of the panel.
 
+\includegraphics{images/beta COMM storyboard.png}
+
 The comm is inactive until it receives a signal. The user can hit any of the five buttons at any time, depressing the button as is shown in comm screen #1 (far left) but nothing will show on the screen if there is no signal. (alternatively, we can have a short message like "Channel 1 - No uplink" display on the comm screen if the player pushes buttons without a signal.)
 
 When a signal is received, it is funneled into the first unused channel - in the storyboard's case, it is the first button. When the signal comes, it lights up the button with a blue line, to show this is an active channel. An alert sound should accompany the initiation of the signal. The blue bar on the button will light up regardless of whether the channel button is currently depressed or not. (see screen #2 in the storyboard).
