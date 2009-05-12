@@ -183,8 +183,10 @@ green, however if concentrators are used the value can go past 100\%.
 In this case, values above 100\% will be shown as a secondary bar in
 red which overlaps the primary bar.
 
+In the event the player has install concentrators into the gun bay, the gun strength can increase above 100%. Each concentrator adds 25% power bonus on the existing gun strength. Without concentrators, the gun indicator bar is a dark red. When concentrators are installed and the gun charges to the new max charge, the additional 25% (or 50, 75, etc) will be indicated by a second, overlapping bar of bright red that should start at the bottom of the indicator bar and rise until it hits the maximum. So if one concentrator is installed and the user turns on the guns, the dark red bar will rise to 100%, from bottom to top, and then a bright red bar will rise, starting from the bottom and obscuring the existing dark red bar, and rise to 1/4 the height of the indicator bar. Please note that this assume all four rails in the Gun bay are fully functioning. If there is a dead rail or shunts are used, the maximum gun power will be reduced accordingly. 
+
 The "SHLD" status indicator shows the current charge of the shields and
-the SHIELDS slider bar can be moved to turn on a dynamic amount of
+the SHIELDS slider bar can be moved to turn on a dynamic ount of
 shield power.  A "peak" mark will be displayed at the highest amount
 the shields can charge to, which the shields will not charge past
 even if the slider is set higher.
@@ -207,10 +209,6 @@ Shield Gauge & (255, 0, 255, 255) & & \\
 Open Items:
 \begin{itemize}
 \item We need to include a table of reticles that the user can cycle through.
-\item How do we show the charge in the GUN indicator if the user is
-using concentrators and the charge can be more than 100%?  Presumably
-even if one gun row is offline the system can charge to 100% if concentrators
-are being used on the other 3 rows.
 \item If the shields can only work at a reduced efficiency, do they still
 take the same amount of fuel to run as they would if they were 100\%?
 \item The buttons are somewhat small, so do we want it to toggle them
