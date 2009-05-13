@@ -183,7 +183,7 @@ green, however if concentrators are used the value can go past 100\%.
 In this case, values above 100\% will be shown as a secondary bar in
 red which overlaps the primary bar.
 
-In the event the player has install concentrators into the gun bay, the gun strength can increase above 100%. Each concentrator adds 25% power bonus on the existing gun strength. Without concentrators, the gun indicator bar is a dark red. When concentrators are installed and the gun charges to the new max charge, the additional 25% (or 50, 75, etc) will be indicated by a second, overlapping bar of bright red that should start at the bottom of the indicator bar and rise until it hits the maximum. So if one concentrator is installed and the user turns on the guns, the dark red bar will rise to 100%, from bottom to top, and then a bright red bar will rise, starting from the bottom and obscuring the existing dark red bar, and rise to 1/4 the height of the indicator bar. Please note that this assume all four rails in the Gun bay are fully functioning. If there is a dead rail or shunts are used, the maximum gun power will be reduced accordingly. 
+In the event the player has installed "concentrators" into the gun bay (special parts bought on the black market that increase gun strength), the gun strength can increase above the normal 100%. Each concentrator adds 25% power bonus on the existing gun strength. Without concentrators, the gun indicator bar is a dark red. When concentrators are installed and the gun charges to the new max charge, the additional 25% (or 50%, 75%, etc) will be indicated by a second, overlapping bar of bright red that should start at the bottom of the indicator bar and rise until it hits the maximum. So if one concentrator is installed and the user turns on the guns (or if the gun is fired, sending the gun charge down to 0%), the dark red bar will rise to 100% as it charges, from bottom to top, and then a bright red bar will rise, starting from the bottom and obscuring the existing dark red bar, and it will rise to 1/4 the height of the indicator bar (25%). Please note that this assumes all four rails in the Gun bay are fully functioning. If there is a dead rail or shunts are used, the maximum gun power will be reduced accordingly. 
 
 The "SHLD" status indicator shows the current charge of the shields and
 the SHIELDS slider bar can be moved to turn on a dynamic ount of
@@ -385,12 +385,12 @@ probability meter.
 \includegraphics[scale=0.70]{images/fuelcontrol.png}
 
 Fuel control shows the current fuel drain on the ship, and allows the player
-to decide whether to draw fuel from an auxillary fuel pod, or from the
+to decide whether to draw fuel from an axillary fuel pod, or from the
 ship's fuel tanks.  Fuel drain is calculated at in "Units Per Minute" for
 each of the ships systems.
 
 The "Ship\slash Aux" button in the fuel control panel will default to
-being illuminated.  If there is an auxillary fuel pod onboard, pressing
+being illuminated.  If there is an axillary fuel pod onboard, pressing
 "Ship\slash Aux" or "Aux\slash Ship" will cause whichever button was
 pressed to be illuminated and the other button to be inactive.  Otherwise
 "Ship\slash Aux" will always be active.  Fuel will drain from whichever
@@ -444,7 +444,7 @@ Open Issues:
 \subsubsection{Indicators}
 \includegraphics[scale=0.70]{images/indicators.png}
 
-The system indicators are broken down in to several catagories, namely
+The system indicators are broken down in to several categories, namely
 condition events, offline systems, hull status and system status.
 
 Each row of every system will be displayed as a green, yellow or red
@@ -457,7 +457,7 @@ indicator panel.
 The "FUEL LOW" indicator is illuminated when there are only 200 units
 of fuel left total (from both the main tank and the aux tank).
 
-The "HULL" inidcator shows the current state of the hull up to 100%.
+The "HULL" indicator shows the current state of the hull up to 100%.
 Between 95-100\%, the indicator will be green (0, 255, 0, 255),
 yellow between 30-94\%, otherwise red.  If the hull gets to 0\%, the
 space ship is destroyed. 
@@ -518,7 +518,7 @@ of shunts should probably be avoided unless necessary.
 A status row next to each system row indicates the current performance
 of that row.  A green light indicates that the row is operating at
 100\% capacity.  If a shunt is used for any part in the row, the row will
-operate at 76\% capacity and the inidicator light will be yellow.  If
+operate at 76\% capacity and the indicator light will be yellow.  If
 more than one shunt is used in the row, the indicator light will be red
 and the row output will be 48\% for two shunts and 24\% for three shunts.
 
