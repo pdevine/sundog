@@ -375,6 +375,9 @@ Z1 - Vector & \\
 \hline
 \end{tabular}
 
+Enemy ships should have health ratings. (Table of health ratings to be made in future) A small, light ship might have a health rating of 200, while a heavy cruiser might have 4000. 
+
+
 Open Issues:
 \begin{itemize}
 \item Fill in the rest of the wireframes.
@@ -526,10 +529,7 @@ Control Node & J-Junc Module & Scanner & J-Junc Module \\
 \hline
 \end{tabular}
 
-Open Issues:
-\begin{itemize}
-\item What functionality does pilotage give the ship?
-\end{itemize}
+Pilotage contains the ship's control and navigation systems. Without this system, the ship cannot use maps or fly.
 
 \subsubsection{Guns}
 
@@ -546,15 +546,13 @@ The gun bay controls the operation of the cannon and laser systems aboard
 the SunDog.  Without working guns the SunDog it is impossible to strike
 back at attacking ships during ship-to-ship combat.
 
-Open Issues:
-\begin{itemize}
-\item To what degree will the efficiency of the guns systems affect
-combat effectiveness?
-\item Is the laser weaker in the case that the system is not running
-at peak efficiency?  Presumably no but it will take longer to charge --
-the charge can determine the damage to the other ship.
-\item Is the cannon weaker?  Does it take more fuel to fire?
-\end{itemize}
+The lower the health of the gun system, the weaker the laser. The health bar of the system (as displayed in the system bay) shows health from 1-100%. This should coorespond to laser power. A system running at 83% will have a laser that is 83% of maximum power. The guns will also recharge slower.  At full health, the guns will recharge from 0 to 100% in three seconds. For every percent that the gun system has lost health, a tenth of a second should be added to the recharge time. For example: a gun system running at 80% health because of shunts in the system will have a five second recharge time - three seconds base recharge plus two seconds from the 20% loss of health. 
+
+The laser is more powerful, but it is harder to hit the enemy ship. Conversely the cannon is easier to hit since the shells explode when in proximity to the enemy ship (they do not have to be a direct hit to deliver damage) but they are weaker. 
+
+A laser hit should do 100 damage and a cannon should do 60 damage. (In the future, it may be good to have different types of laser frequencies and cannon shells, which can be selected in the TAC menu.) 
+
+
 
 \subsubsection{Shields}
 
