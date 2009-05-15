@@ -125,27 +125,21 @@ DISTRESS
 The player can make a distress call by clicking on the DISTRESS bar at the bottom of the COMM. Upon click, the bar's image will change from the "OFF" version to the "ON" version, and the COMM screen will then display the interaction between the player and the dispatcher of the local planet. 
 
 When the distress call is answered by the dispatcher, the interraction takes place similar to a call to 911. Upon pulling the distress handle, the dispatcher sends a message asking the nature of the problem, and gives options for the user to choose. The user may choose multiple items from the list. The options should include: 
-NEED FUEL - Dispatcher then sends a fuel tanker to the ship's location
-NEED RESCUE - Dispatcher will send the planetary coast guard to chase the pirates away. The player will wait (just like for fuel) until the Guard arrives, upon which if the player is still alive, the pirates will flee. Player can then continue on to the planet. 
-NEED HULL REPAIRS - The dispatcher will send a repair ship. The repair ship will then perform some minor hull repairs to allow the player to safely make it back to the planet. 
-NEED PARTS - The repair ship will arrive and deliver parts. To avoid problems with delivery, the best way would be to have a robot appear by the airlock door and remain there for five minutes. During this time, the player can click on the robot and access its storage compartments like a locker, wherein the player will find a small assortment of ship parts. There should not be enough parts to do significant repairs: one of each part and eight shunts.  The player uses the new parts to repair the ship's systems so he can limp back to port. 
+NEED FUEL - Dispatcher then sends a fuel tanker to the ship's location. Upon arrival, the Sundog's on board tank is filled to 100%. Cost for this procedure is based on the local cost of a full load fuel bought at the space port, times three. 
+NEED RESCUE - Dispatcher will send the planetary coast guard to chase the pirates away and escort the ship. The player will wait (just like for fuel) until the Guard arrives, upon which if the player is still alive, the pirates will flee. Player can then continue on to the planet under guard. The player may preemptively call the Guard if he knows the system is bad and he has a high chance of being attacked. However, the cost of this procedure should make preemptive calls for the Guard cost-prohibitive.
+NEED TOW - Dispatcher will send a tow "truck" to Sundog's location and tow it to the nearest planet's spaceport. This option may be employed if the ship is so badly damaged that even with fuel it cannot operate under its own power. The cost of this tow should be a base price plus an amount that reflects the distance of the tow. 
 
 The response time between the distress call and the arrival of help will vary. The response time depends on three factors: Distance from closest planet (from where the rescue is coming), Lawlessness, and Population of Planet. A slight randomizing factor should be included so no two response times in the same system are exactly the same. 
  
-Distance: measure the distance between the ship and the closet inhabited planet (presumably the to which you are travelling). The longer the distance, the longer the wait. For example, a 3 AU distance would mean 6 real-world minutes of wait time, while a 0.5 AU would mean a 1 minute wait. This equation is purely for demonstration - a real equation can be created when we determine the units of measurment that will be used in the game. 
+Distance: measure the distance between the ship and the closet inhabited planet (presumably the to which you are traveling). The longer the distance, the longer the wait. For example, a 3 AU distance would mean 6 real-world minutes of wait time, while a 0.5 AU would mean a 1 minute wait. This equation is purely for demonstration - a real equation can be created when we determine the units of measurement that will be used in the game. 
 
-Lawlessness: In systems with lots of piurate activity, rescue might be sporatic, much as an ambulence arrival might be unpredictable in the deep ganglands of Detroit. The higher the level of lawlessness, the longer the delay. For example, for each lawlessness variable level (rated from 1-10) add 30 seconds. 
+Lawlessness: In systems with lots of pirate activity, rescue might be sporadic, much as an ambulance arrival might be unpredictable in the deep ganglands of Detroit. The higher the level of lawlessness, the longer the delay. For example, for each lawlessness variable level (rated from 1-10) add 30 seconds. 
 
-Population: In a heavily populated system, there will be a large social infrastructture to handle distress calls in the busy space of traffic lanes. Thus response time will be decreased. In small or new colonies, there might be one battered rescue ship on standby, which will increase response time. Example: a median population factor (5) will not affect response time. For each variable factor over 5, decrease response time by 15 seconds. For each factor below 5, add 15 seconds. 
+Population: In a heavily populated system, there will be a large social infrastructure to handle distress calls in the busy space of traffic lanes. Thus response time will be decreased. In small or new colonies, there might be one battered rescue ship on standby, which will increase response time. Example: a median population factor (5) will not affect response time. For each variable factor over 5, decrease response time by 15 seconds. For each factor below 5, add 15 seconds. 
 
 Open Items:
 \begin{itemize}
-\item What's the response time for distress calls?  Is it different
-depending on what system the ship is in (presumably some random value
-which interacts with the lawlessness value)?
-\item What happens when the distress call is answered?  Is a ship dispatched or
-the police just call and have a conversation?  Can we show multiple
-conversations on the Comm display?
+\item  Can we show multiple conversations on the Comm display?
 the cursor up similar to the sliders?
 \end{itemize}
 
