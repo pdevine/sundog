@@ -303,7 +303,7 @@ In orbit or in flight:
 - SUB-LIGHT
 - HALT(if currently sub-lighting)
 - SET WARP 
-- DO WARP (if warp is charged over 60% - warp may not be successful if not fully charged and ship is located at jump point)
+- DO WARP (warp may not be successful if it does not have a high enough probability %, and ship is not located at jump point)
 - STOP WARP (if warp is charging or fully charged)
 - MAPS
 - SET YAW (Described below)
@@ -389,7 +389,6 @@ Open Issues:
 
 Open Issues:
 \begin{itemize}
-\item Remove the engine start button.
 \item The warp charge entry needs to be changed to the successful warp
 probability meter.
 \end{itemize}
@@ -408,10 +407,14 @@ being illuminated.  If there is an axillary fuel pod onboard, pressing
 pressed to be illuminated and the other button to be inactive.  Otherwise
 "Ship\slash Aux" will always be active.  Fuel will drain from whichever
 supply is selected until it runs out, at which point it will start to drain
-from the other supply.  
+from the other supply.  If the "AUX\slash SHIP" button is pushed when there is no axillary
+fuel pod, this is not a problem as the system will treat the lack of fuel in the AUX as if that supply had run dry, and the system will look only to the ship's tanks for fuel. 
 
 When fuel runs out, all systems except the Comm will be inoperative and
 the "Systems Offline" and "Low Fuel" indicators will become illuminated.
+
+When the player calls for a refuel in space, a tanker will arrive after a time. (See above for details.) When the tanker arrives, an audible scraping-clunking noise is heard and the hum of fuel rushing into the ship's tank. This sound sequence lasts three seconds before the humming of fuel begins. As the ship is refueled, the fuel meter rises until it is full. A refill should take 8 seconds. Once full, there is a second audible sound of the tanker disengaging. Two seconds after the disengagement, the system will reboot and become fully functional again automatically. 
+
 
 Fuel Consumption Rates:
 
@@ -431,49 +434,40 @@ Idle Consumption & 1\slash minute \\
 \hline
 \end{tabular}
 
-Open Issues:
-\begin{itemize}
-\item If the "AUX\slash SHIP" button is pushed when there is no auxillary
-fuel pod, is there still a sound emitted?
-\item How do we want to handle refueling?  Will the systems automatically
-all come back online?
-\item Should there be fuel drain for systems which are not working at
-peak efficiency?  This could be a huge gameplay issue since it could make
-combat too difficult if parts are popping in the middle of combat which
-causes fuel drain to increase.
-\end{itemize}
+In addition to the above table, for each parts rail that has a yellow condition light, 1\slash minute fuel consumption is added. For each parts rail that has a red condition light, 2\slash minute.  This will reasonably cause unhealthy parts bays to be less fuel efficient, but will not affect combat, since when a part breaks because of the attack, it deadens a rail, and a dead rail does not consume fuel. 
 
-\subsubsection{EPU System}
-
-The Emergency Power Unit is a system of last resort for powering the
-SunDog to quickly get to a particular place, at the cost of running
-out of all remaining fuel.
-
-Open Issues:
-\begin{itemize}
-\item Remove the EPU from the cockpit.
-\end{itemize}
 
 \subsubsection{Indicators}
 \includegraphics[scale=0.70]{images/indicators.png}
 
+SYSTEM INDICATORS: 
 The system indicators are broken down in to several categories, namely
 condition events, offline systems, hull status and system status.
 
-Each row of every system will be displayed as a green, yellow or red
+Each parts rail of every system will be displayed as a green, yellow or red
 indicator in the system status window depending on their status.  An
-offline row (one with a broken or missing part) will not be illuminated.
-If all rows are offline, the functionality of that system is considered
-offline and a red indicator light will illuminate in the "Systems Offline"
+offline rail (one with a broken or missing part) will not be illuminated.
+If all rails are offline, the functionality of that system is considered
+offline and a red indicator light will illuminate in the "SYSTEMS OFFLINE"
 indicator panel.
 
-The "FUEL LOW" indicator is illuminated when there are only 200 units
-of fuel left total (from both the main tank and the aux tank).
-
+HULL INDICATOR BAR:
 The "HULL" indicator shows the current state of the hull up to 100%.
 Between 95-100\%, the indicator will be green (0, 255, 0, 255),
 yellow between 30-94\%, otherwise red.  If the hull gets to 0\%, the
-space ship is destroyed. 
+space ship is destroyed.  
+
+CONDITION EVENTS
+The condition events panel has illuminated text alerts that light upon a specific event. This text can be a graphic or a programically added font. These messages are, from top to bottom:
+
+CLOAKED: (GREEN) Indicates Sundog is cloaked. 
+FUEL LOW: (YELLOW) The "FUEL LOW" indicator is illuminated when there are only 200 units
+of fuel left total (from both the main tank and the aux tank).
+FUEL DRY: (RED) Indicates out of fuel. 
+HULL BREACH: (RED) Lights when the hull state is below 10%. 
+
+The other spaces may be used in the future for other conditions or alerts. 
+ 
 
 %\begin{inparaenum}[\itshape a\upshape\)]
 %\item condition events;
@@ -484,23 +478,9 @@ space ship is destroyed.
 
 Open Issues:
 \begin{itemize}
-\item When does an "OVERHEAT" event happen?  From the ships guns?  After
-how many times would that happen from firing?
-\item When would life support be compromised?  How long until the player dies?
-Do we even need a concept of life support?
-\item What does it mean when there is a hull breach?  Can the hull be breached
-only when the hull meter is at zero?
-\item What does the cabin pressure light do?  Is this redundant to 
-the hull breach indicator?
-\item What does a radiation event do?  Is that when there is a problem with
-a ships system or is it when the SunDog flies too close to the sun?  Do
-we need this option?
 \item In the mockup it says "FORCE" instead of "SHLDS" for the system
 offline indicator.  Do we care about this (maybe we leave it as a cute
-quirk)?
-\item We 
-\item How does hull indicator work?  Should it be different colours depending
-on how damaged the hull is?
+quirk)? (I'd rather we change FORCE to either SHLDS or SHIELDS (if SHIELDS can fit)). 
 \end{itemize}
 
 \subsection{System Bays}
