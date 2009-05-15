@@ -246,45 +246,38 @@ Open Items:
 
 \includegraphics[scale=0.7]{images/hud.png}
 
-The heads up display is the main tactical viewport of the Sun Dog.  When
-tactical mode is activated, the HUD will illuminate its center reticle
-and the tracking circles for fighting enemy ships.  In addition, tracking
-information is display in the lower portion of the view port and the
-weapon selected will be displayed in the upper left hand corner.
+The heads up display (HUD) is the main tactical viewport of the Sun Dog.  When
+tactical mode is activated, the HUD will illuminate its center targeting reticle
+and the tracking "radar" circles for fighting enemy ships, both located in the lower left of the HUD.  In addition, tracking information is displayed in the lower portion of the view port: X, Y, and Z coordinates. Gun and Shield strength bars are shown in the lower right side. This is redundant with the primary controls on the dashboard, but in a firefight it will be helpful to have this critical information immediately adjacent to the action. If redundancy was to be avoided, the classic control panel would have to be removed and redrawn, OR the handy HUD status bars would not be used. Considering the Sundog is an inelegant, clunky freighter, it seems natural that some redundancy would occur. The currently selected weapon will be displayed in the upper left hand corner as text (i.e. Laser, cannon, etc). A small "pointer" can indicate the direction of the enemy ship. Current fighter jets have such a feature, and it would make sense such a feature would be available in the future. (This feature is not critical, and can wait for future versions of the game). 
 
+Everything in the HUD is to be drawn programatically. 
+
+Warp effects: The original game had a "Star Wars" style warp effect. A similar effect should be employed in this version of the game. The predominant color of the stars in the effect should be shades of gray, with some colored stars lightly employed. The warp effect should start with the present starfield moving slowly towards the cockpit, some stars moving faster due to their close proximity. The sound of engines rev, and the stars move faster until they begin shooting at the cockpit, multiplying until they fill the entire blackness of space with light. Another effect of "hyperspace" should then appear, followed by a sudden cessation of star motion and returning the player to a static field of stars. 
+
+If a raster graphic of stars is used for the background of space (which would be easiest to program and lightest on memory as opposed to a background of star-objects), it will be difficult or impossible to have a smooth transition from the background the star field to the slowly moving star field in the beginning stages of warp. To fix this problem, the ship should roll before engaging the warp engine. During the roll, the background star field should be discretely replaced with the first frame of the warp animation sequence, which is a static star field that will shortly begin to move. 
 
 Open Issues:
 \begin{itemize}
-\item The Guns\slash Shields indicators are redundant to the ones on
-the dash board.  Do we need to show them in two places?
-\item Does the red alert light stay on or does it flash?  Should this be
-drawn programatically or should we use an image?
-\item Do we need to show the Z coordinate along with X and Y of attacking
-ships?
-\item Do we want to use the fancy warp effects that we had for the 2D
-game?
-\item The reticle depicted has an extra line which appears to point toward
-where the attacking ship is.  Do we want a reticle that can do this?
-\end{itemize}
 
 \includegraphics[scale=0.7]{images/lower-hud.png}
 
 Below the HUD is the red alert indicator which should activate when the
-SunDog is under attack.
+SunDog is under attack.  This lights up when the ship is under attack, and an audible klaxon sounds in the background. The light will remain illuminated until the enemy ship is destroyed or flees. There is a graphic image for the "on" state of the light, which allows some reflected illumination to appear on cockpit surfaces near the light. 
+
 
 A chronometer with the current game time is displayed underneath the red
 alert indicator and a pulsing strip surrounds it which signals that the ships
 Sub-C engines are currently activated.
 
+A MASTER CAUTION light illuminates when a new situation occurs, such as a system failure, hull damage, etc. It will remain illuminated until the player clicks it. Upon a click, it will turn off, until another event occurs that will trigger it. 
+
+THREAT LOCK indicates the enemy ship's weapons systems are locked onto the Sundog and that attack is imminent. In a typical engagement, this will illuminate after the dialogue between the pirates ends and just prior to the pirate ship making an attack. It will remain on until the pirate ship either begins to flee, is destroyed, or when the player jettison's the cargo and the attack ends. 
+
+PROX is a proximity alert. It may illuminate when the pirate ship in the course of an attack gets too close. Other uses for it may be planned in the future. 
+
 Open Issues:
 \begin{itemize}
 \item How does the COMM indicator work?
-\item When does the MASTER CAUTION indicator come on?  When tactical mode
-is activated?
-\item Is it the THREAT LOCK indicator or the THREAT and LOCK indicators,
-and when are they activated?  Is this when the enemy locks onto the SunDog
-or when the SunDog is using something like the autoslew part?
-\item What does the PROX indicator do?
 \end{itemize}
 
 \subsubsection{Primary Flight Display}
@@ -296,17 +289,44 @@ Open Issues:
 
 \subsubsection{Computer}
 
+Between the COMM and the MFD there is a NAV-TAC menu panel. This panel has a tabbed button at the top. The default mode is NAV for Navigation. In this mode, the menu will display appropriate text options for commands, such as TAKE OFF, LAND, MAPS, etc. When the player selects the TAC tab, the ship enters "Tactical Mode" and tactical menu options are now displayed in the menu. These tabs work just like the original game, which contained a NAVIGATION and TACTICAL button on the screen. Pressing either button, just as pressing the tabs here, will bring up a menu of options. While on the ground, the TAC menu is inaccessible and clicking on the TAC tab will result in a beep and a text message on the MFD saying "TACTICAL MODE NOT AVAILABLE WHILE ON GROUND".
+
+NAV Menu options are as follows: 
+On the ground:
+- LIFTOFF
+- SET WARP
+- MAPS
+- CITY-CITY (when a ground scanner is installed)
+
+In orbit or in flight:
+- LAND (if orbiting)
+- SUB-LIGHT
+- HALT(if currently sub-lighting)
+- SET WARP 
+- DO WARP (if warp is charged over 60% - warp may not be successful if not fully charged and ship is located at jump point)
+- STOP WARP (if warp is charging or fully charged)
+- MAPS
+- SET YAW (Described below)
+- SET ROLL (Described below)
+
+There should be some way of changing ship settings such as yaw vs.
+roll. This can be a menu option in the NAV menu. The menu items should be SET YAW (when ROLL is selected) and SET ROLL (when YAW is selected.) When either of these options are chosen, a text message should appear in the main MFD stating "YAW NOW SELECTED" or "ROLL NOW SELECTED". 
+
+TAC Menu options are as follows: 
+- LASER
+- CANNON
+- TRACTOR (Clicking this will bring in cargo jettisoned or lost during combat. Clicking it when no cargo is in range will result in a beep and a message on the MFD: "SCANNERS DETECT NO CARGO IN VICINITY FOR TRACTOR BEAM"
+- CLOAK (when cloaker is installed)
+- DE-CLOAK (when de-cloaker is installed)
+
+
+
 Open Issues:
 \begin{itemize}
-\item There should be some way of changing ship settings such as yaw vs.
-roll.
-\item There needs to be an option to tractor beam in cargo after
-destroying an enemy vessel.
+
+
 \item We need to mock up the various situations for what menu items
-will show up in the computer.  Also, does the tactical mode make sense?
-\item Was the Nav\slash Tac button above the computer supposed to change modes
-of the computer or was it supposed to automatically put the SunDog into
-tactical mode?
+will show up in the computer. 
 \end{itemize}
 
 \subsubsection{IFF}
@@ -357,7 +377,6 @@ Z1 - Vector & \\
 
 Open Issues:
 \begin{itemize}
-\item IFF ident buttons are to be removed.
 \item Fill in the rest of the wireframes.
 \item Are certain ships more likely in certain places with less lawlessness?
 \item What are the different capabilities of each of the ships?
