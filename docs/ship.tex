@@ -418,25 +418,34 @@ the "Systems Offline" and "Low Fuel" indicators will become illuminated.
 When the player calls for a refuel in space, a tanker will arrive after a time. (See above for details.) When the tanker arrives, an audible scraping-clunking noise is heard and the hum of fuel rushing into the ship's tank. This sound sequence lasts three seconds before the humming of fuel begins. As the ship is refueled, the fuel meter rises until it is full. A refill should take 8 seconds. Once full, there is a second audible sound of the tanker disengaging. Two seconds after the disengagement, the system will reboot and become fully functional again automatically. 
 
 
+Fuel Economy
+
+Fuel economy will be determined by adding various consumption rates together for the final consumption rate. The current consumption rate will be displayed in the cockpit as U.P.M. (Units Per Minute). This rate will be calculated every "real" second, which equates to one "Sundog" minute. 
+
+Fuel tanks and the pod auxiliary fuel storage tanks will each hold 17,000 units.  The original Sundog ship held 17 units, so this keeps with that tradition. The player will buy fuel at 1000 units a pop.
+
 Fuel Consumption Rates:
 
 \begin{tabular}{ | l | l | }
 \hline
 Ship System & Rate \\
-Cannon\slash Laser & 10\slash minute \\
-Guns Idle & 2\slash minute \\
-Shields & 20\slash minute while charging \\
-Shields Idle & 2\slash minute \\
+Guns charging & 10\slash minute \\
+Guns holding charge & 2\slash minute \\
+Shields charging & 20\slash minute \\
+Shields holding charge & 2\slash minute \\
 Sub-C & 35\slash minute \\
-Warp & 45\slash minute while charging \\
-Warp Idle & 2\slash minute \\
+Warp charging & 45\slash minute \\
+Warp holding charge & 2\slash minute \\
 Cloaker & 80\slash minute \\
 Decloaker & 50\slash minute \\
-Idle Consumption & 1\slash minute \\
+Ship Idle Consumption & 1\slash minute \\
 \hline
 \end{tabular}
 
-In addition to the above table, for each parts rail that has a yellow condition light, 1\slash minute fuel consumption is added. For each parts rail that has a red condition light, 2\slash minute.  This will reasonably cause unhealthy parts bays to be less fuel efficient, but will not affect combat, since when a part breaks because of the attack, it deadens a rail, and a dead rail does not consume fuel. 
+NOTE THAT THESE "MINUTES" ARE GAME MINUTES, NOT REAL WORLD MINUTES. 
+
+In addition to the above table, for each parts rail in a system bay that has a yellow condition light, 1\slash minute fuel consumption is added. For each parts rail that has a red condition light, 2\slash minute. Green indicator lights have no effect on fuel consumption (healthy rail) and a black, dead rail will likewise have no effect on fuel consumption. This will reasonably cause unhealthy parts bays to be less fuel efficient, but will not affect combat, since when a part breaks because of the attack, it deadens a rail, and a dead rail does not consume fuel. 
+
 
 
 \subsubsection{Indicators}
