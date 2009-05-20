@@ -336,6 +336,12 @@ will show up in the computer.
 When the SunDog comes across another vessel or object in space, the ship's
 onboard IFF system will display information about the object.  
 
+The information will include: the wireframe profile of the ship, the name of the type of ship, and the ship's health. The health will be displayed on a horizontal yellow bar. As the yellow bar decreases due to damage, there will be an underlying brown bar underneath to indicate how much damage the ship has already taken. When the ship's health reaches 10% the yellow bar turns red. 
+
+Upon destruction of the enemy ship, the wireframe image should switch to the "debris" image, but still maintain the information for the ship (name, etc). 
+
+If there is a cargo pod drifting in the debris, the player will be notified by a message in the MFD screen, and a TRACTOR menu option will appear in the TACTICAL menu. Upon clicking TRACTOR, the IFF image will change to a cargo pod, and the text will change to "Cargo Pod." A deep humming sound of the tractor beam should commence for four seconds. At the end of four seconds, the program will made a call on whether the tractor was successful. There should be a 1 in 5 change the tractor was not successful.  If not successful, the humming ceases and the MFD indicates "Cargo lost - tractor unsuccessful." If the tractor was successful, a rumbling noise occurs for one second as the cargo is dragged into the Sundog's pod, and then silence as a message appears on the MFD that indicates "Tractor successful - cargo onloaded." 
+
 Art Assets:
 
 \begin{tabular}{ | l | l | }
@@ -374,15 +380,13 @@ Z1 - Vector & \includegraphics{images/ship_z1_vector.png} \\
 \hline
 \end{tabular}
 
-Enemy ships should have health ratings. (Table of health ratings to be made in future) A small, light ship might have a health rating of 200, while a heavy cruiser might have 4000. 
+Enemy ships should have health ratings. (Table of health ratings to be made in future) A small, light ship might have a health rating of 300, while a heavy space station might have 3000 or more. 
 
 
 Open Issues:
 \begin{itemize}
-\item Fill in the rest of the wireframes.
-\item Are certain ships more likely in certain places with less lawlessness?
-\item What are the different capabilities of each of the ships?
-\item It would be nice to do a rotating wireframe of each ship.
+\item Are certain ships more likely in certain places with less lawlessness? ANSWER: Yes - each ship will have a "geographical code." One or more ships may be assigned to a code. Code A might have five ships, for instance, and Code E might only have one rare ship. Then the systems will also contain a list of geographical codes. So if a system has geographical code A, all five ships may be found there. More lawless systems might be given both Codes A and E which will allow the rare ship to appear along with the common ones.  (geographical codes to be included later with ship details)
+\item What are the different capabilities of each of the ships? (Chart to come soon)
 \item We need to have corresponding 3D models to each of the ship outlines.
 \end{itemize}
 
@@ -438,13 +442,13 @@ Warp charging & 45\slash minute \\
 Warp holding charge & 2\slash minute \\
 Cloaker & 80\slash minute \\
 Decloaker & 50\slash minute \\
-Ship Idle Consumption & 1\slash minute \\
+Ship Idle Consumption (applies whenever ship is in flight) & 1\slash minute \\
 \hline
 \end{tabular}
 
-NOTE THAT THESE "MINUTES" ARE GAME MINUTES, NOT REAL WORLD MINUTES. 
+NOTE THAT THESE "MINUTES" ARE GAME MINUTES, NOT REAL WORLD MINUTES. 1 game minute is 1 realworld second. 
 
-In addition to the above table, for each parts rail in a system bay that has a yellow condition light, 1\slash minute fuel consumption is added. For each parts rail that has a red condition light, 2\slash minute. Green indicator lights have no effect on fuel consumption (healthy rail) and a black, dead rail will likewise have no effect on fuel consumption. This will reasonably cause unhealthy parts bays to be less fuel efficient, but will not affect combat, since when a part breaks because of the attack, it deadens a rail, and a dead rail does not consume fuel. 
+In addition to the above table, for each parts rail in a system bay that has a yellow condition light, 1\slash minute fuel consumption is added. For each parts rail that has a red condition light, 2\slash minute. Green indicator lights have no effect on fuel consumption (healthy rail) and a black, dead rail will likewise have no effect on fuel consumption. This will reasonably cause unhealthy parts bays to be less fuel efficient, but will cause a snowballing effect during combat, since when a part breaks because of the attack, it deadens a rail, and a dead rail does not consume fuel. 
 
 
 
@@ -475,6 +479,7 @@ CLOAKED: (GREEN) Indicates Sundog is cloaked.
 FUEL LOW: (YELLOW) The "FUEL LOW" indicator is illuminated when there are only 200 units
 of fuel left total (from both the main tank and the aux tank).
 FUEL DRY: (RED) Indicates out of fuel. 
+SYS OFFLINE: (RED) Indicates a system has gone offline because all four rails are dead. 
 HULL BREACH: (RED) Lights when the hull state is below 10%. 
 
 The other spaces may be used in the future for other conditions or alerts. 
@@ -558,8 +563,8 @@ The lower the health of the gun system, the weaker the laser. The health bar of 
 
 The laser is more powerful, but it is harder to hit the enemy ship. Conversely the cannon is easier to hit since the shells explode when in proximity to the enemy ship (they do not have to be a direct hit to deliver damage) but they are weaker. 
 
-A laser hit should do 100 damage and a cannon should do 60 damage. (In the future, it may be good to have different types of laser frequencies and cannon shells, which can be selected in the TAC menu.) 
 
+INSERT CHART FOR LASER AND CANNON POWER
 
 
 \subsubsection{Shields}
@@ -634,7 +639,7 @@ Control Node & Flux Modulator & Photon Bridge & ST Distorter \\
 Open Issues:
 \begin{itemize}
 \item Do the warp engines only determine the distance that the SunDog
-can jump?  ie. if you have only one system row working, can the SunDog
-only jump 1/4 the distance?
+can jump?  ie. if you have only one system rail working, can the SunDog
+only jump 1/4 the distance? 
 \end{itemize}
 
