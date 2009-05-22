@@ -342,53 +342,183 @@ Upon destruction of the enemy ship, the wireframe image should switch to the "de
 
 If there is a cargo pod drifting in the debris, the player will be notified by a message in the MFD screen, and a TRACTOR menu option will appear in the TACTICAL menu. Upon clicking TRACTOR, the IFF image will change to a cargo pod, and the text will change to "Cargo Pod." A deep humming sound of the tractor beam should commence for four seconds. At the end of four seconds, the program will made a call on whether the tractor was successful. There should be a 1 in 5 change the tractor was not successful.  If not successful, the humming ceases and the MFD indicates "Cargo lost - tractor unsuccessful." If the tractor was successful, a rumbling noise occurs for one second as the cargo is dragged into the Sundog's pod, and then silence as a message appears on the MFD that indicates "Tractor successful - cargo onloaded." 
 
-Art Assets:
+SHIP DATA
 
-\begin{tabular}{ | l | l | }
+\begin{tabular}{ | l | l | l | l | l | l | l | l | l | }
 \hline
-Ship or Visual & Image \\
+Ship IFF Image & Hit Points & Speed & Agility & Weapons & Weapon Speed & Rout Factor & Geographical Code & Popularity \\
 \hline
-Angolith MK-V & \includegraphics{images/ship_angolith_mk-v.png} \\
-Annihilator & \includegraphics{images/ship_annihilator.png} \\
-Cargo Pod & \includegraphics{images/ship_cargo_pod.png} \\
-Cryn MK-90 & \includegraphics{images/ship_cryn_mk-90.png} \\
-Cryn MK-110 & \includegraphics{images/ship_cryn_mk-110.png} \\
-Cryn MK-140 & \includegraphics{images/ship_cryn_mk-140.png} \\
-Death Angel MK-2 & \includegraphics{images/ship_deathangel_mk-2.png} \\
-Debris Field & \includegraphics{images/ship_debris_field.png} \\
-Jammed Signal & \includegraphics{images/ship_jammed_signal.png} \\
-Kolum 8820 & \includegraphics{images/ship_kolum_8820.png} \\
-Life Pod & \includegraphics{images/ship_lifepod.png} \\
-Phantom UL & \includegraphics{images/ship_phantom UL.png} \\
-Probe & \includegraphics{images/ship_probe.png} \\
-Rathain M1 & \includegraphics{images/ship_rathain_m1.png} \\
-Rathain M5 & \includegraphics{images/ship_rathian_m5.png} \\
-Rynroth-VOR & \includegraphics{images/ship_rynroth-vor.png} \\
-Shath Class 3 & \includegraphics{images/ship_shath_class_3.png} \\
-Skryth MK-IV & \includegraphics{images/ship_skryth_mk_iv.png} \\
-Skryth MK-VII & \includegraphics{images/ship_skryth_mk_vii.png} \\
-Sorth CF-50 & \includegraphics{images/ship_sorth_cf_50.png} \\
-Space Station & \includegraphics{images/ship_spacestation_1.png} \\
-Space Station & \includegraphics{images/ship_spacestation_2.png} \\
-Unknown Enlie & \includegraphics{images/ship_unknown_enlie.png} \\
-Valshur 85 & \includegraphics{images/ship_valshur_85.png} \\
-Valshur 130 & \includegraphics{images/ship_valshur_130.png} \\
-Volton MK-IV & \includegraphics{images/ship_volton_mk_iv.png} \\
-Volton MK-X & \includegraphics{images/ship_volton_mk_x.png} \\
-VW 69 & \includegraphics{images/ship_VW-69.png} \\
-Z1 - Vector & \includegraphics{images/ship_z1_vector.png} \\
+Angolith MK-V & \includegraphics{images/ship_angolith_mk-v.png} \ 600 \ 5 \ 5\ C40 \ 5 \ 6 \ C \ 5 \\
+Annihilator & \includegraphics{images/ship_annihilator.png} \ 2000 \ 6 \ 3 \LE C70 \ 3 \ 3 \ B \ 2 \\
+Cryn MK-90 & \includegraphics{images/ship_cryn_mk-90.png} \ 1000 \ 6 \ LB \ 4 \ 6 \ F \ 4 \\
+Cryn MK-110 & \includegraphics{images/ship_cryn_mk-110.png} \1100 \ 7 \ 5 \ LG \ 5 \ 5 \ F \ 4 \\
+Cryn MK-140 & \includegraphics{images/ship_cryn_mk-140.png} \ 1200 \ 8 \ 5 \ LG \ 5 \ 5 \ F \ 3 \\
+Death Angel MK-2 & \includegraphics{images/ship_deathangel_mk-2.png} \ 1700 \ 5\ 4 \ LD C90 \ 3 \ 2 \ G \ 2 \\
+Kolum 8820 & \includegraphics{images/ship_kolum_8820.png} \ 700 \ 3 \ 6 \ C40 \ 3 \ 7 \ E \ 4 \\
+Life Pod & \includegraphics{images/ship_lifepod.png} \ 50 \ 1 \ 1 \  \  \ 10 \ - \ - \\
+Phantom UL & \includegraphics{images/ship_phantom UL.png} \ 1800 \ 7 \ 5 \ LG C40 \ 4 \ 3 \ A \ 6 \\
+Probe & \includegraphics{images/ship_probe.png} \ 150 \ 2 \ 2 \ - \ - \ - \ - \ - \\
+Rathain M1 & \includegraphics{images/ship_rathain_m1.png} \ 600 \ 5 \ 4 \ C30 \ 7 \ 7 \ D \ 7 \\
+Rathain M5 & \includegraphics{images/ship_rathian_m5.png}  \ 1300 \ 5 \ 4 \ LA \ 5 \ 5 \ D \ 7 \\
+Rynroth-VOR & \includegraphics{images/ship_rynroth-vor.png} \ 2500 \ 2 \ 1 \ LA C30 \ 8 \ 2 \ X \ 1 \\
+Shath Class 3 & \includegraphics{images/ship_shath_class_3.png} \ 900 \ 6 \ 5 \ LG \ 7 \ 4 \ E \ 4 \\
+Skryth MK-IV & \includegraphics{images/ship_skryth_mk_iv.png} \ 1400 \ 5 \ 3 \ LA C55 \ 4 \ 5 \ E \ 5 \\
+Skryth MK-VII & \includegraphics{images/ship_skryth_mk_vii.png} \ 1150 \ 7 \ 6 \ C55 \ 5 \ 4 \ E \ 6 \\
+Sorth CF-50 & \includegraphics{images/ship_sorth_cf_50.png} \ 950 \ 7 \ 7 \ LA \ 7 \ 6 \ D \ 5 \\
+Space Station & \includegraphics{images/ship_spacestation_1.png} \ 3000 \ 0 \ 0 \ LB C40 \ 5\ - \ - \ - \\
+Space Station & \includegraphics{images/ship_spacestation_2.png} \ 4000 \ 0 \ 0\ LG C90 \ 5 \ - \ - \ - \\
+Unknown Enlie & \includegraphics{images/ship_unknown_enlie.png} 900 \ 9 \ 10 \ LE C90 \ 8 \ 1 \ Z \ - \\
+Valshur 85 & \includegraphics{images/ship_valshur_85.png} \ 400 \ 8 \ LA \ 10 \ 3 \ A \ 6 \\
+Valshur 130 & \includegraphics{images/ship_valshur_130.png} \ 1200 \ 6 \ 6 \ LG C55 \ 3 \ 5 \ C \ 5 \\
+Volton MK-IV & \includegraphics{images/ship_volton_mk_iv.png} \ 800 4 \ 6 \ LA \ 3 \ 4 \ A \ 8 \\
+Volton MK-X & \includegraphics{images/ship_volton_mk_x.png} \ 900 \ 7 \ 6 \ LB \ 5 \ 4 \ A \ 7 \\
+VW 69 & \includegraphics{images/ship_VW-69.png} \ 500 \ 8 \ 8 \ LG \ 4 \ 4 \ B \ 4 \\
+Z1 - Vector & \includegraphics{images/ship_z1_vector.png} \ 800 \ 5 \ 4 \ C30 \ 3 \ 4 \ A \ 6 \\
+
 \hline
 \end{tabular}
 
-Enemy ships should have health ratings. (Table of health ratings to be made in future) A small, light ship might have a health rating of 300, while a heavy space station might have 3000 or more. 
+NOTE: The IFF will not show the orange tab with the text - this is just for reference to ID the image. 
+
+
+SUNDOG DATA
+        HULL HEALTH = 2000 hp 
+		 0-100% shields  
+	WEAPONS = LA and C30 (subject to upgrades, which can be purchased from the starport)
+ 	WEAP SPEED = 3 second recharge, but player may fire before gun is fully charged, for lessened effect. 
+
+SUNDOG SHIELDS
+
+100% shields reduce weapon damage by 90%.  (plus randomizing factor). 
+Upon hit, shields drop to 0% and regen to 100% in five seconds. If shot before full charge, they drop to 0 again, and weapon damage is reduced based on the current shield level.
+
+PIRATE SHIP SPEED
+
+Indicates speed of pirate ship. High numbers indicate faster speed. Actual measurements to be determined. 
+
+AGILITY 
+
+Sets the factor of random movements as the pirate ship slips about on the XYZ axis. Lower numbers indicate a more stationary attack method while higher numbers indicate a higher degree of movement and random changes in direction.
+
+
+WEAPON TYPE / DAMAGE 
+Laser
+	Alpha 	= 60		
+	Beta 	= 80
+	Gamma   = 100
+	Delta 	= 125
+	Epsilon = 150
+
+Cannon
+	IGM 30 = 30
+	IGM 40 = 40
+	IGM 55 = 55
+	IGM 70 = 70
+	IGM 90 = 90
+
+WEAPON SPEED 
+	
+10=0.4 seconds
+9=.6
+8=.8
+7= 1
+6=1.3
+5=1.7
+4=2
+3=2.5
+2=3
+1=4
+
+
+weapon speed is the MAXIMUM speed that the pirate ship will shoot - basically this is the recharge time for the weapon. The pirate ship code should use a randomizing equation where the pirate ship will choose whether to fire or not for each firing cycle. The rate should be roughly one shot per three cycles. Thus there may be several shots in quick succession followed by a pause, or vise versa. 
+
+Rout Factor
+
+Determines the chance that the pirate will rout when his ship’s health reaches 10%. Lower numbers indicate the pirate will stand and deliver, higher numbers indicate he will turn tail and run. If the pirate routs, the ship will move away from Sundog, during which time the player may get a few more shots in and blow up the pirate. 
+
+Geographical Code
+
+Certain types of ships will be seen in certain locations. This will be accomplished by a geographical code. Each ship will have a geo code assigned, and each system will have one or more geo codes assigned. Only ships with matching geo codes may appear in those systems. This will ensure certain types of ships will be encountered in localized areas, to preserve realism and sense of discovery. 
+
+Popularity
+
+While a geographical code may have a handful of ships assigned to it, and some systems may have several geo codes allowed, some ships may be more common than others. Popularity rating means that the higher the number, the more common this ship is. How this works is described below under COMBAT, INITIATION AND SHIP SELECTION. 
+
+
+
+
+COMBAT, INITIATION and SHIP SELECTION
+
+Combat begins when a pirate ship approaches the Sundog. Pirates will not pester the player unless the player has cargo on board, nor will they attack while the player is orbiting an inhabited planet. The chance of being attacked by a pirate increases based on the lawlessness factor of the system. 
+
+The program will randomly choose a time to attack the player, subject to a higher chance if the system has a high lawlessness factor. Upon triggering an attack, the program will determine what type of spacecraft is attacking. This will be determined by checking the geographical code for a list of available ships, then it will randomly choose one ship from this list based on the popularity factor. This can be accomplished by a lottery, where the popularity factor provides the number of chances that any particular ship has to be chosen. 
+
+EXAMPLE:
+GeoCode A has 3 ships, ShipA, ShipB and ShipC. ShipA has a popularity rating of 7, ShipB has 5 and ShipC has 2. When the lottery is drawn, each ship has as many chances as it has popularity points, making it more probable that ShipA will be chosen, but nothing prevents ShipC from being chosen once in a while.
+
+COMBAT, CONVERSATION
+
+Once the program choses the pirate ship, it will place the ship in space far from the Sundog. Concurrently, the Sundog's RED ALERT warning should activate, which is the red light bar in the center of the cockpit and a klaxon should sound. A short time later (subject to a randomizing factor that will shorten or lengthen this time by several seconds) the COMM will ring and the pirate message will appear. 
+
+The pirate message will demand the player jettison the cargo or be blown up. The actual language of this conversation will be randomized a bit. The player has the option to agree, refuse, or "talk about it." 
+
+"Agree" will postpone the pirate attack for two minutes to allow the player to jettison the cargo. If no cargo is jettisoned in two minutes, the attack will begin. 
+
+"Refuse" will either terminate the conversation with a announcement that the pirate will blow the ship up, or on a random occasion, the pirate will ask why not. This will bring up the same menu that "talk about it" causes. 
+
+"Talk about it" (and the occasion where a refusal will prompt the pirate question, "Why not?") will bring up a new menu of options: bluff, fast talk, and threaten. Each response has a chance to get out of the combat engagement with the pirate telling the player to get lost (in various ways) and then leaving the area. Once the pirate ship disappears (about 10 seconds after sending the "get lost" message) the Red Alert should end automatically and the klaxon should stop. If the pirate ship doesn't buy the bluff/fast talk/threat/ then they will indicate the same, and make one final demand for a jettison. Answers are "Agree" and "Refuse," to the effect as described above. 
+
+
+COMBAT, ENGAGEMENT
+
+Upon conclusion of any discussion, the pirate will begin the attack. The pirate ship will fire at the Sundog at a power and speed as indicated in the chart (and related discussion) above. 
+
+If the Sundog has 100% shields, any incoming damage is reduced by 90%, plus a randomizing factor of 10%. 
+Upon the hit, the Sundog's shields will drop to 0% and then will regen to 100% in five seconds. If the Sundog is hit again before fully charged to 100%, they drop to 0 again, and weapon damage is reduced based on the current shield level.
+
+Laser hits and cannon hits should both have different sounds. Each type of sound should have several variations, so each hit does not sound identical. 
+
+HIT DAMAGE, PARTS
+
+Each hit will present a chance to blow a part, depending on hit damage as calculated after the shield's protective effect. The chances of blowing a part are as follows: 
+DAMAGE 1-10 = 1 out of 14
+DAMAGE 11-20 = 1 out of 11
+DAMAGE 21-35 = 1 out of 8
+DAMAGE 36-45 = 1 out of 6 
+DAMAGE 46-59 = 1 out of 4
+DAMAGE 60-80 = 1 out of 3
+DAMAGE 81-999 = 1 out of 2
+
+HIT DAMAGE, HULL
+
+After calculating the protective effect of the shields, any remaining damage should be subtracted from the Sundog's hull health. This will reduce the hull status bar in the cockpit. 
+
+If the damage subtracted to the hull is over 50, the screen should flash red briefly as a cringe-inducing crunching sound occurs. 
+
+
+SUNDOG'S WEAPONS
+
+The Sundog's laser, while more powerful, has a more focused target hit-zone. Hence more accurate shooting is demanded to make a hit on a pirate ship. The cannon shells have proximity fuses so they do not need a direct hit, but can explode in the vicinity of the pirate ship. 
+
+The laser has one small target hit-zone.  If the pirate ship is within the zone when the player fires, there is a hit for the damage allowed by the type of laser installed in the Sundog. 
+
+The cannon has two hit zones, one that is the same small size as the laser and a larger one that is three times the size as the laser hit-zone - much like a two ring bulleye. The outer ring should deliver the full damage allowed by the Sundog's current type of cannon. A direct hit within the smaller ring should give the same damage but with a 20% bonus.  
+
+
+COMBAT, OUTCOME
+
+As the player inflicts damage on the pirate, the IFF indicates the pirate's health loss. When the pirate's health zeros out, the pirate will explode in space. There will be a 1 in 3 chance that the pirate ship drops retrivable cargo, and a one in 5 chance that the player will get a bounty for the kill. The bounty will be delivered to the player's bank account in the system where the kill occurred. 
+
 
 
 Open Issues:
 \begin{itemize}
-\item Are certain ships more likely in certain places with less lawlessness? ANSWER: Yes - each ship will have a "geographical code." One or more ships may be assigned to a code. Code A might have five ships, for instance, and Code E might only have one rare ship. Then the systems will also contain a list of geographical codes. So if a system has geographical code A, all five ships may be found there. More lawless systems might be given both Codes A and E which will allow the rare ship to appear along with the common ones.  (geographical codes to be included later with ship details)
-\item What are the different capabilities of each of the ships? (Chart to come soon)
-\item We need to have corresponding 3D models to each of the ship outlines.
+\item Bluff and Fast Talk were dependent on personal characteristics in the original game, which were chosen when the player initiated the account. These characteristics could also be changed in-game with black market items like "charmers." Should we do this in the remake? The Bluff and Fast Talk are rather pointless without factors to influence the choice. Similar is the threaten - to really be effective the success of the threaten option should reflect the Sundog's strength compared to the pirate ship. Should this be implemented, or should we save this complexity until later? 
+
 \end{itemize}
+
+
+
 
 \subsubsection{Engine}
 \includegraphics[scale=0.70]{images/engine.png}
@@ -422,7 +552,7 @@ the "Systems Offline" and "Low Fuel" indicators will become illuminated.
 When the player calls for a refuel in space, a tanker will arrive after a time. (See above for details.) When the tanker arrives, an audible scraping-clunking noise is heard and the hum of fuel rushing into the ship's tank. This sound sequence lasts three seconds before the humming of fuel begins. As the ship is refueled, the fuel meter rises until it is full. A refill should take 8 seconds. Once full, there is a second audible sound of the tanker disengaging. Two seconds after the disengagement, the system will reboot and become fully functional again automatically. 
 
 
-Fuel Economy
+FUEL ECONOMY 
 
 Fuel economy will be determined by adding various consumption rates together for the final consumption rate. The current consumption rate will be displayed in the cockpit as U.P.M. (Units Per Minute). This rate will be calculated every "real" second, which equates to one "Sundog" minute. 
 
